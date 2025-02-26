@@ -1,10 +1,10 @@
 function DiscountsCard() {
   return (
-    <div className="max-w-7xl mx-auto w-[90vw] my-10">
-      <div className="flex gap-5 text-gray-100 justify-between items-center">
-        <div className="flex-1 bg-gradient-to-b from-red-600 to-red-700 h-24 rounded-xl pt-2 pb-5">
+    <div className="max-w-7xl mx-auto w-[90vw] my-10 text-sm">
+      <div className="flex gap-5 text-gray-100 justify-between items-center flex-col sm:flex-row text-center md:text-left  ">
+        <div className="bg-gradient-to-b from-red-600 to-red-700 h-16 rounded-xl px-5 flex flex-col justify-center w-full">
           <h2 className="font-semibold">Over Yen 1000 Invoice</h2>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 text-center mx-auto md:ml-0">
             <p className="text-gray-200">Delivery Free </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,9 +21,9 @@ function DiscountsCard() {
             </svg>
           </div>
         </div>
-        <div className="flex-1 bg-gradient-to-b from-amber-400 to-amber-500 h-24 rounded-xl pt-2 pb-5">
+        <div className="bg-gradient-to-b from-amber-500 to-amber-600 h-16 rounded-xl px-5 flex flex-col justify-center w-full">
           <h2 className="font-semibold">Over Yen 1000 Invoice</h2>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 text-center mx-auto md:ml-0">
             <p className="text-gray-200">Delivery Free </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +40,9 @@ function DiscountsCard() {
             </svg>
           </div>
         </div>
-        <div className="flex-1 bg-gradient-to-b from-lime-700 to-lime-800 h-24 rounded-xl  pt-2 pb-5">
+        <div className="bg-gradient-to-b from-lime-700 to-lime-800 h-16 rounded-xl px-5 flex flex-col justify-center w-full">
           <h2 className="font-semibold">Over Yen 1000 Invoice</h2>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 mx-auto md:ml-0">
             <p className="text-gray-200">Delivery Free </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
