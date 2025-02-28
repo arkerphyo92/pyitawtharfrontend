@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/images/logo.jpeg";
+import logo from "@/public/images/product.jpg";
 
 function CategoryListBox() {
   return (

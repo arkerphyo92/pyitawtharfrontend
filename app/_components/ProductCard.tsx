@@ -1,4 +1,9 @@
-function ProductCard() {
+import { Product } from "@/app/_types/product";
+
+interface ProductCard {
+  product: Product;
+}
+function ProductCard({ product }: ProductCard) {
   return (
     <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
       <div className="bg-gradient-to-b from-emerald-400 to-emerald-400 text-white text-center h-8 flex items-center justify-center p-0">
@@ -30,7 +35,7 @@ function ProductCard() {
           />
         </div>
       </div>
-      <h3 className="text-lg font-semibold ps-2 pt-5">Fruit</h3>
+      <h3 className="text-lg font-semibold ps-2 pt-5">{product.name}</h3>
       <div className="flex text-gray-600 text-[0.7rem] gap-1 relative ps-2 pb-2">
         <p>100g</p>
         <span>$500</span>
