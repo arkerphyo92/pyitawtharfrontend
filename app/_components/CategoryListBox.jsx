@@ -1,7 +1,10 @@
-import Image from "next/image";
-import logo from "@/public/images/product.jpg";
+"use client";
+import CategoryListItem from "@/app/_components/CategoryListItem";
+import useCategories from "@/app/_hooks/categoryService";
 
 function CategoryListBox() {
+  const { category, loading, error } = useCategories();
+
   return (
     <div className="-mt-12">
       <div className="max-w-7xl mx-auto">
@@ -12,123 +15,11 @@ function CategoryListBox() {
           </div>
           <div>
             <ul className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-center">
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold mb-0">Cat Title</h3>
-                  <p className="p-0 m-0">30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
-              <li>
-                <div className="flex flex-col">
-                  <Image
-                    src={logo}
-                    quality={80}
-                    alt="Pyi Taw Thar Logo"
-                    title="Pyi Taw Thar Logo"
-                    className="hover:scale-105 w-20 transition-all mx-auto"
-                  />
-                  <h3 className="font-semibold">Cat Title</h3>
-                  <p>30 Items</p>
-                </div>
-              </li>
+              {category.map((category) => {
+                return (
+                  <CategoryListItem key={category.id} category={category} />
+                );
+              })}
             </ul>
           </div>
         </div>

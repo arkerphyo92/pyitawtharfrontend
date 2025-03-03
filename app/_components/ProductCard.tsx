@@ -1,11 +1,8 @@
 import { Product } from "@/app/_types/product";
 import Image from "next/image";
 import NoProductImage from "@/public/images/NoProductImage.jpeg";
-interface ProductCard {
-  product: Product;
-}
 
-function ProductCard({ product }: ProductCard) {
+function ProductCard({ product }: { product: Product }) {
   return (
     <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
       <div className="bg-gradient-to-b from-emerald-400 to-emerald-400 text-white text-center h-8 flex items-center justify-center p-0">
@@ -86,6 +83,7 @@ function ProductCard({ product }: ProductCard) {
             alt={product.name}
             width={150}
             height={30}
+            priority={product.images.length === 0}
           />
         </div>
       </div>

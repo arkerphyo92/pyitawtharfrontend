@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { getAllProducts } from "@/app/_services/productService";
-import { Product, productResponse } from "@/app/_types/product";
+import { Product, apiResponse } from "@/app/_types/product";
 
 const useProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -11,7 +11,7 @@ const useProducts = () => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const response: productResponse = await getAllProducts();
+        const response: apiResponse = await getAllProducts();
         console.log("products", response);
         setProducts(response.items);
       } catch (error) {

@@ -34,7 +34,7 @@ export interface Product {
   images: ProductImage[];
 }
 
-export interface productResponse {
+export interface apiResponse {
   items: Product[];
   count: number;
 }
