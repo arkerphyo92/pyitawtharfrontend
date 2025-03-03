@@ -3,10 +3,10 @@ export interface ProductImage {
 }
 
 export interface ProductDiscount {
-  retail_discount_percentage?: number | null;
-  wholesale_discount_percentage?: number | null;
-  start_date?: string | null;
-  end_date?: string | null;
+  retail_discount_percentage: number | null;
+  wholesale_discount_percentage: number | null;
+  start_date: string | null;
+  end_date: string | null;
 }
 
 export interface ProductPrice {
@@ -14,6 +14,8 @@ export interface ProductPrice {
   wholesale_price?: number | null;
   retail_price_with_discount?: number | null;
   wholesale_price_with_discount?: number | null;
+  retail_pay_type: string | null;
+  wholesale_pay_type?: string | null;
 }
 
 export interface Product {
@@ -23,8 +25,8 @@ export interface Product {
   category: string;
   stock: number;
   stock_type?: string;
-  weight?: number | null;
-  weight_type?: string | null;
+  weight: number | null;
+  weight_type: string | null;
   status: string;
   in_stock: boolean;
   prices: ProductPrice;
