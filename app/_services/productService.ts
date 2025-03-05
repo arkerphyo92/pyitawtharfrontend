@@ -1,9 +1,14 @@
 import { apiResponse } from "@/app/_types/product";
 import api from "@/app/_lib/api";
 
-export const getAllProducts = async (): Promise<apiResponse> => {
+export const getAllProducts = async (category): Promise<apiResponse> => {
   try {
-    const response = await api.get("/api/products/list");
+    let response;
+    if (category) {
+      response = await api.get(`/api/products/list?category=${category}`);
+    } else {
+      response = await api.get("/api/products/list");
+    }
     if (response && response.data) {
       console.log("response.data", response.data); // Log just the response data
       return response.data;

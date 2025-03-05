@@ -5,8 +5,6 @@ import ProductCardContainer from "@/app/_components/ProductCardContainer";
 export default function App() {
   return (
     <>
-      <CategoryListBox />
-      <DiscountsCard />
       <ProductCardContainer />
     </>
   );

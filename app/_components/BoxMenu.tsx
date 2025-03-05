@@ -1,12 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
+import Menu from "@/app/_components/Menu";
 
 function BoxMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    const handleEsc = (e) => {
+    const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setIsMenuOpen(false);
       }
@@ -26,7 +27,7 @@ function BoxMenu() {
           <i
             className={`bx ${
               isMenuOpen ? "bx-x" : "bx-menu"
-            } text-5xl transition-transform duration-200 ease-in-out cursor-pointer ${
+            } text-5xl text-amber-500 transition-transform duration-200 ease-in-out cursor-pointer ${
               hasMounted
                 ? isMenuOpen
                   ? "rotate-90"
@@ -43,18 +44,7 @@ function BoxMenu() {
         >
           {isMenuOpen && (
             <ul className="flex flex-col items-start gap-4 p-4 font-semibold text-base z-50">
-              <li className="p-3 w-full hover:bg-sky-400 hover:text-white rounded-md transition-all cursor-pointer">
-                <i className="bx bx-home pe-5"></i> Home
-              </li>
-              <li className="p-3 w-full hover:bg-sky-400 hover:text-white rounded-md transition-all cursor-pointer">
-                <i className="bx bx-home pe-5"></i> Products
-              </li>
-              <li className="p-3 w-full hover:bg-sky-400 hover:text-white rounded-md transition-all cursor-pointer">
-                <i className="bx bx-home pe-5"></i> Explore
-              </li>
-              <li className="p-3 w-full hover:bg-sky-400 hover:text-white rounded-md transition-all cursor-pointer">
-                <i className="bx bx-home pe-5"></i> Contact
-              </li>
+              <Menu />
             </ul>
           )}
         </div>
