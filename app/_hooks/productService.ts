@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAllProducts } from "@/app/_services/productService";
 import { Product, apiResponse } from "@/app/_types/product";
 
-const useProducts = (category) => {
+const useProducts = (params: string | null) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -11,7 +11,7 @@ const useProducts = (category) => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const response: apiResponse = await getAllProducts(category);
+        const response: apiResponse = await getAllProducts(params);
         console.log("products", response);
         setProducts(response.items);
       } catch (error) {
@@ -23,7 +23,7 @@ const useProducts = (category) => {
     };
 
     loadProducts();
-  }, []);
+  }, [params]);
 
   return { products, loading, error };
 };

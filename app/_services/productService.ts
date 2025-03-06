@@ -1,11 +1,14 @@
 import { apiResponse } from "@/app/_types/product";
 import api from "@/app/_lib/api";
 
-export const getAllProducts = async (category): Promise<apiResponse> => {
+export const getAllProducts = async (
+  params: string | null
+): Promise<apiResponse> => {
   try {
     let response;
-    if (category) {
-      response = await api.get(`/api/products/list?category=${category}`);
+    if (params) {
+      console.log("params", params);
+      response = await api.get(`/api/products/list?category_name=${params}`);
     } else {
       response = await api.get("/api/products/list");
     }

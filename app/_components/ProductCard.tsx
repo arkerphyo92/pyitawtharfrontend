@@ -88,7 +88,9 @@ function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
       <div className="flex justify-between items-center px-2 py-2">
-        <h3 className="text-lg font-semibold">{product.name}</h3>
+        <h3 className="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
+          {product.name}
+        </h3>
       </div>
       <div className="flex text-gray-600 text-[0.7rem] gap-1 relative ps-2 pb-2">
         <div className="flex flex-col gap-1">

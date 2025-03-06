@@ -5,8 +5,12 @@ import { Product } from "@/app/_types/product";
 import NoProductsFound from "./NoProductsFound";
 import Loading from "@/app/_components/Loading";
 
-export default function ProductCardContainer() {
-  const { products, loading, error } = useProducts();
+export default function ProductCardContainer({
+  params,
+}: {
+  params: string | null;
+}) {
+  const { products, loading, error } = useProducts(params);
 
   if (loading) {
     return <Loading />;

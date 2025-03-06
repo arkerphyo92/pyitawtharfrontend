@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAllCategories } from "@/app/_services/categoryService";
 import { Category, apiResponse } from "@/app/_types/category";
 
-const useCategories = () => {
+const useCategories = (params: string | null) => {
   const [category, setCategory] = useState<Category[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -11,7 +11,7 @@ const useCategories = () => {
   useEffect(() => {
     const loadCategories = async () => {
       try {
-        const response: apiResponse = await getAllCategories();
+        const response: apiResponse = await getAllCategories(params);
         console.log("categories", response);
         setCategory(response.items);
       } catch (error) {
@@ -23,7 +23,7 @@ const useCategories = () => {
     };
 
     loadCategories();
-  }, []);
+  }, [params]);
 
   return { category, loading, error };
 };
