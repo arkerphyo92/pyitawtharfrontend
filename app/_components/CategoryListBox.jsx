@@ -1,6 +1,6 @@
 "use client";
 import CategoryListItem from "@/app/_components/CategoryListItem";
-import useCategories from "@/app/_hooks/categoryService";
+import useCategories from "@/app/_hooks/_category/useCategories";
 
 function CategoryListBox() {
   const { category, loading, error } = useCategories();

@@ -7,7 +7,7 @@ export default function App() {
     <>
       <CategoryListBox />
       <DiscountsCard />
-      <ProductCardContainer />
+      <ProductCardContainer params={null} />
     </>
   );
 }
