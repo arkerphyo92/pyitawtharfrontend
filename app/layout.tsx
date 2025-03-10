@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { NextFont } from "next/dist/compiled/@next/font";
-import HeaderMenu from "@/app/_components/HeaderMenu";
-import BottomNavigation from "@/app/_components/BottomNavigation";
+import HeaderMenu from "@/app/_components/_menu/HeaderMenu";
+import BottomNavigation from "@/app/_components/_menu/BottomNavigation";
 import "./globals.css";
 
 const robotoFont: NextFont = Roboto({
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords: ["wild oasis", "cabins", "paradise", "luxury"],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Menu from "@/app/_components/Menu";
+import Menu from "@/app/_components/_menu/MenuDataList";
 
-function BoxMenu() {
+function LeftMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -72,4 +72,4 @@ function BoxMenu() {
   );
 }
 
-export default BoxMenu;
+export default LeftMenu;

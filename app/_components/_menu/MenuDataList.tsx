@@ -5,11 +5,11 @@ interface MenuLink {
 }
 const mainMenu: MenuLink[] = [
   { menuName: "Home", pathName: "/" },
-  { menuName: "Categories", pathName: "/categories" },
-  { menuName: "Explore", pathName: "/explore" },
-  { menuName: "Contact", pathName: "/contact" },
+  { menuName: "Categories", pathName: "/" },
+  { menuName: "Explore", pathName: "/" },
+  { menuName: "Contact", pathName: "/" },
 ];
-export default function Menu() {
+export default function MenuDataList() {
   return (
     <>
       {mainMenu.map((menu) => (

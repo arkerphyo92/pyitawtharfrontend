@@ -7,13 +7,13 @@ export const getAllCategories = async (
   try {
     let response;
     if (params) {
-      console.log("params", params);
+      // console.log("params", params);
       response = await api.get(`/api/categories/list?parentCategory=${params}`);
     } else {
       response = await api.get("/api/categories/list");
     }
     if (response && response.data) {
-      console.log("response.data", response.data); // Log just the response data
+      // console.log("response.data", response.data); // Log just the response data
       return response.data;
     } else {
       throw new Error("No data returned in the response");

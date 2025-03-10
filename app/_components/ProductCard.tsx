@@ -1,8 +1,9 @@
 import { Product } from "@/app/_types/product";
 import Image from "next/image";
 import NoProductImage from "@/public/images/NoProductImage.jpeg";
-import ProductModal from "@/app/_components/ProductModal";
+import ProductModal from "@/app/_components/_modal/ProductModal";
 import { useState } from "react";
+import Link from "next/link";
 
 function ProductCard({ product }: { product: Product }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -15,7 +16,7 @@ function ProductCard({ product }: { product: Product }) {
       />
       <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
         <div className="bg-gradient-to-b from-emerald-400 to-emerald-400 text-white text-center h-8 flex items-center justify-center p-0">
-          {product.category}
+          <Link href={`/category/${product.category}`}>{product.category}</Link>
         </div>
         <div className="relative">
           <div
@@ -81,7 +82,10 @@ function ProductCard({ product }: { product: Product }) {
               ``
             )}
           </div>
-          <div className="relative z-0">
+          <div
+            className="relative z-0 cursor-pointer"
+            onClick={() => setModalOpen(true)}
+          >
             <Image
               src={
                 product.images.length > 0 && product.images

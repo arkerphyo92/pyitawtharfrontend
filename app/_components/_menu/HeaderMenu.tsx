@@ -2,9 +2,10 @@ import Image from "next/image";
 import logo from "@/public/images/logo.png";
 import "boxicons/css/boxicons.min.css";
 
-import BoxMenu from "@/app/_components/BoxMenu";
-import Menu from "@/app/_components/Menu";
+import LeftMenu from "@/app/_components/_menu/LeftMenu";
+import MenuDataList from "@/app/_components/_menu/MenuDataList";
 import Link from "next/link";
+import Search from "@/app/_components/_menu/Search";
 
 export default function HeaderMenu() {
   return (
@@ -24,21 +25,13 @@ export default function HeaderMenu() {
         {/* Desktop navigation */}
         <div className="flex-1 flex justify-center absolute sm:relative">
           <ul className="text-white hidden lg:flex items-center gap-6 font-semibold text-base">
-            <Menu />
+            <MenuDataList />
           </ul>
         </div>
         {/* Search bar */}
-        <div className="relative flex items-center mx-auto lg:ml-auto gap-3">
-          <i className="bx bx-search absolute left-4 text-2xl text-slate-500"></i>
-          <input
-            type="text"
-            width={60}
-            placeholder="Search Items"
-            className="py-2 pl-10 rounded-full border-2 text-slate-700 border-blue-300 focus:bg-slate-100 focus:outline-sky-500"
-          />
-        </div>
+        <Search />
 
-        <BoxMenu />
+        <LeftMenu />
       </div>
     </header>
   );

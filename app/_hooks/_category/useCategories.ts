@@ -12,7 +12,7 @@ const useCategories = (params: string | null) => {
     const loadCategories = async () => {
       try {
         const response: apiResponse = await getAllCategories(params);
-        console.log("categories", response);
+        // console.log("categories", response);
         setCategory(response.items);
       } catch (error) {
         console.log(error);

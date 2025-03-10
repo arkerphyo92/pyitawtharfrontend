@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import ProductModal from "@/app/_components/ProductModal";
+import ProductModal from "@/app/_components/_modal/ProductModal";
 export default function page() {
   const [modalOpen, setModalOpen] = useState(false);
   return (

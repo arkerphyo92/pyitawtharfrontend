@@ -4,13 +4,16 @@ import useProducts from "@/app/_hooks/useProducts";
 import { Product } from "@/app/_types/product";
 import NoProductsFound from "./NoProductsFound";
 import Loading from "@/app/_components/Loading";
-
+import { useParams } from "next/navigation";
 export default function ProductCardContainer({
-  params,
+  category,
 }: {
-  params: string | null;
+  category: string;
 }) {
-  const { products, loading, error } = useProducts(params);
+  // console.log("params fro product card container", category);
+  let search = null;
+  // console.log("params from productcardcontainer", params);
+  const { products, loading, error } = useProducts(category, search);
 
   if (loading) {
     return <Loading />;
