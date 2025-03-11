@@ -4,7 +4,6 @@ import useProducts from "@/app/_hooks/useProducts";
 import { Product } from "@/app/_types/product";
 import NoProductsFound from "./NoProductsFound";
 import Loading from "@/app/_components/Loading";
-import { useParams } from "next/navigation";
 export default function ProductCardContainer({
   category,
 }: {

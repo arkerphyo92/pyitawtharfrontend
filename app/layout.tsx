@@ -13,15 +13,23 @@ const robotoFont: NextFont = Roboto({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pyi Taw Thar Sales",
+    default: "Pyi Taw Thar | e-Commerce | Myanmar Grocery Store in Japan",
     template: "%s | Pyi Taw Thar",
   },
-  description: "Discover the hidden gems of the wild Oasis",
+  description:
+    "Myanmar Products in Japan, Available the high quality Products, Myanmar Grocery Store in Japan",
   authors: [{ name: "Divergent Graphic and Web Solutions" }],
-  keywords: ["wild oasis", "cabins", "paradise", "luxury"],
+  keywords: [
+    "Myanmar Online Store in Japan",
+    "Myanmar Grocery Store in Japan",
+    "Fish, Meat, Vegetables",
+    "Fruits, Nuts, Seeds",
+    "Beverages, Dairy",
+    "Bakery, Snacks, Confections",
+  ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;

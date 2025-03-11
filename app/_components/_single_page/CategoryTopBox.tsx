@@ -13,10 +13,12 @@ function CategoryListBox({ categoryName }: { categoryName: string }) {
         <div className="flex flex-col text-center bg-white text-slate-800 p-3 shadow-2xl rounded-2xl w-[90vw] max-w-7xl mx-auto">
           <div className="flex justify-between px-5 py-3">
             <h2 className="font-semibold">{categoryName}</h2>
-            <p>
-              {category?.products_count} Products in{" "}
-              <span className="font-bold">{category?.description}</span>
-            </p>
+            {!loading && (
+              <p>
+                {category?.products_count} Products in{" "}
+                <span className="font-bold">{category?.description}</span>
+              </p>
+            )}
           </div>
         </div>
       </div>

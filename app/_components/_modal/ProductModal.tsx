@@ -144,14 +144,7 @@ export default function ProductModal({
                     ease: "easeInOut",
                     stiffness: 60,
                   }}
-                >
-                  <button
-                    className="py-2 px-4 text-amber-700 hover:text-amber-600 bg-slate-200 hover:bg-slate-300 rounded-xl bg-opacity-35 transition-all"
-                    onClick={() => setModalOpen(false)}
-                  >
-                    <p className="font-bold text-lg">X</p>
-                  </button>
-                </motion.div>
+                ></motion.div>
               </div>
             </motion.div>
           </div>

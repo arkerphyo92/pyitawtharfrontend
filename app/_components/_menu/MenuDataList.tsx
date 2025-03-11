@@ -5,8 +5,8 @@ interface MenuLink {
 }
 const mainMenu: MenuLink[] = [
   { menuName: "Home", pathName: "/" },
-  { menuName: "Categories", pathName: "/" },
-  { menuName: "Explore", pathName: "/" },
+  { menuName: "Search", pathName: "/" },
+  { menuName: "About Us", pathName: "/" },
   { menuName: "Contact", pathName: "/" },
 ];
 export default function MenuDataList() {

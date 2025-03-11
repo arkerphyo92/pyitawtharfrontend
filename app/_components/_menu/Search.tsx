@@ -18,11 +18,13 @@ export default function Search() {
         <input
           type="text"
           width={60}
-          placeholder="Search Items"
-          className="py-2 pl-10 rounded-full border-2 text-slate-700 border-blue-300 focus:bg-slate-100 focus:outline-sky-500 cursor-pointer focus:outline-none"
+          placeholder="Search Items ..."
+          className="py-2 pl-10 rounded-full border-2 text-slate-700 border-blue-300 focus:bg-slate-100 focus:outline-sky-none cursor-pointer focus:outline-none"
         />
       </div>
-      {showModal && <SearchModal setShowModal={setShowModal} />}
+      {showModal && (
+        <SearchModal setShowModal={setShowModal} showModal={showModal} />
+      )}
     </>
   );
 }

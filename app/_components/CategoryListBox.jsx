@@ -1,6 +1,7 @@
 "use client";
 import CategoryListItem from "@/app/_components/CategoryListItem";
 import useCategories from "@/app/_hooks/_category/useCategories";
+import Loading from "@/app/_components/Loading";
 
 function CategoryListBox() {
   const { category, loading, error } = useCategories();
@@ -14,6 +15,7 @@ function CategoryListBox() {
             <p>View All</p>
           </div>
           <div>
+            <div className="w-full">{loading && <Loading />}</div>
             <ul className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 xl:grid-cols-11 items-center gap-3">
               {category.map((category) => {
                 return (

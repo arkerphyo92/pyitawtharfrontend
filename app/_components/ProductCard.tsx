@@ -2,11 +2,23 @@ import { Product } from "@/app/_types/product";
 import Image from "next/image";
 import NoProductImage from "@/public/images/NoProductImage.jpeg";
 import ProductModal from "@/app/_components/_modal/ProductModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 function ProductCard({ product }: { product: Product }) {
   const [modalOpen, setModalOpen] = useState(false);
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setModalOpen(false);
+      }
+    };
+    if (modalOpen) {
+      document.addEventListener("keydown", handleEsc);
+    } else {
+      document.removeEventListener("keydown", handleEsc);
+    }
+  }, [modalOpen]);
   return (
     <>
       <ProductModal
